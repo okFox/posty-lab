@@ -1,6 +1,14 @@
 import React from 'react';
+import Posty from '../containers/Posty';
 
-export default function App() {
-  return <h1>Hello World</h1>;
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Posty />
+      </>
+    );
+  }
 }
-  
+
+export default App;

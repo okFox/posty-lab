@@ -2,22 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
 
-const History = ({ historyitem }) => {
-  const historyElements = historyitem.map((historyitem, i) => (
+const History = ({ historyItems }) => {
+  const historyElements = historyItems.map((historyItem, i) => (
     <li key={i}>
-      <HistoryItem historyitem={historyitem} />
+      <HistoryItem historyItem={historyItem} />
     </li>
   ));
 
   return (
-    <ul>
-      {historyElements}
-    </ul>
+    <>
+      <h1>History</h1>
+      <ul>
+        {historyElements}
+      </ul>
+    </>
   );
 };
 
 History.propTypes = {
-  historyitem: PropTypes.arrayOf(PropTypes.shape({
+  historyItems: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string.isRequired,
     verb: PropTypes.string.isRequired,
     requestBody: PropTypes.string,

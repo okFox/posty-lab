@@ -1,0 +1,8 @@
+.Form {
+    display: flex;
+    
+    label {
+        font-family: sans-serif;
+    }
+
+}
