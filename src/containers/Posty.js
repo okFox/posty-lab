@@ -6,7 +6,7 @@ import Response from '../components/Response';
 import Footer from '../components/Footer';
 import { fetchWithError } from '../services/api';
 
-export default class Posty extends React.Component {
+export default class Postperson extends React.Component {
   state = {
     url: '',
     verb: '',
@@ -18,10 +18,37 @@ export default class Posty extends React.Component {
     historyItems: []
   }
   
-  fetch = () => fetchWithError(this.state.url)
-    .then(responseBody => {
-      this.setState({ responseBody });
+  fetch = () => {
+    const options = {
+      method: this.state.verb,
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      }
+    };
+
+    if(this.state.token !== '')
+      options.headers.Authorization = `Bearer ${this.state.token}`;
+    else if(this.state.username !== '')
+      options.headers.Authorization = `Basic ${this.state.username}:${this.state.password}`;
+    
+    if(this.state.body !== '') options.body = this.state.body;
+        
+    return fetchWithError(this.state.url, options)
+      .then(responseBody => {
+        this.setState({ responseBody });
+      });
+  }
+
+  resetForm = () => {
+    this.setState({
+      url: '',
+      verb: '',
+      requestBody: '',
+      username: '',
+      password: '',
+      token: ''
     });
+  }
 
   handleChange = ({ target }) => this.setState({ [target.name]: target.value });
 
@@ -42,12 +69,23 @@ export default class Posty extends React.Component {
     this.fetch();
   }
 
+  repopulateForm = ({ url, verb, requestBody, username, password, token }) => {
+    this.setState({
+      url,
+      verb,
+      requestBody,
+      username,
+      password,
+      token
+    });
+  }
+
   render() {
     const { url, verb, requestBody, username, password, token, responseBody, historyItems } = this.state;
     return (
       <>
         <Header />
-        <History historyItems={historyItems}/>
+        <History historyItems={historyItems} onClick={this.repopulateForm}/>
         <Form
           url={url}
           verb={verb}
@@ -56,7 +94,8 @@ export default class Posty extends React.Component {
           password={password}
           token={token}
           onChange={this.handleChange}
-          onSubmit={this.handleSubmit} />
+          onSubmit={this.handleSubmit}
+          onClick={this.resetForm} />
         <Response responseBody={responseBody}/>
         <Footer />
       </>
