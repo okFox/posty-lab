@@ -9,9 +9,9 @@ main {
     height: 100%;
     grid-template-areas: "head head"
                          "hist form"
-                         "foot foot"
-                         "resp resp";
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+                         "resp resp"
+                         "foot foot";
+    grid-template-rows: 100px 1fr 1fr 50px;
     grid-template-columns: 1fr 1fr;
 
     header {
@@ -31,6 +31,7 @@ main {
     }
     section[class=response] {
         grid-area: resp;
+        background-color: blue;
     }
 
 
