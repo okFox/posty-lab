@@ -1,25 +1,26 @@
-* {
+html {
     color: cornsilk;
     background-color: black;
     }
    
 
 main {
-
+    font-family: sans-serif;
     display: grid;
     width: 100%;
     height: 100%;
     grid-template-areas: "head head"
-                         "hist form"
-                         "hist resp"
+                         "resp form"
+                         "resp hist"
                          "foot foot";
-    grid-template-rows: 100px 200px 1fr 50px;
+    grid-template-rows: 100px 500px 1fr 50px;
     grid-template-columns: 35% 65%;
 
 
     header {
         grid-area: head;
         background-color: crimson;
+        font-family: 'Changa', sans-serif;
 
     }
     footer {
@@ -36,8 +37,16 @@ main {
         grid-area: resp;
         background-color: blue;
     }
+    form {
+        grid-area: form;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(184, 117, 152);
+    }
 
-
+}
+h1 {
+    font-family: 'Audiowide', cursive;
 }
 
 
