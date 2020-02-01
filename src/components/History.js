@@ -13,7 +13,7 @@ const History = ({ historyItems, onClick }) => {
   return (
     <>
       <section className={styles.historySection}>
-        <h1>History</h1>
+        <h2>History</h2>
         <ul>
           {historyElements}
         </ul>

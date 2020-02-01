@@ -7,19 +7,19 @@ const Form = ({ url, verb, requestBody, username, password, token, onSubmit, onC
   <form onSubmit={onSubmit} className={styles.form} id={styles.formSection}>
     <input type="text" name="url" placeholder="Enter URL" defaultValue={url} onChange={onChange} />
 
-    <label>
+    <label htmlFor="GET">
       <input type="radio" name="verb" id="GET" value="GET" checked={verb === 'GET'} onChange={onChange} />GET
     </label>
-    <label>
+    <label htmlFor="POST">
       <input type="radio" name="verb" id="POST" value="POST" checked={verb === 'POST'} onChange={onChange} />POST
     </label>
-    <label>
+    <label htmlFor="PUT">
       <input type="radio" name="verb" id="PUT" value="PUT" checked={verb === 'PUT'} onChange={onChange} />PUT
     </label>
-    <label>
+    <label htmlFor="PATCH">
       <input type="radio" name="verb" id="PATCH" value="PATCH" checked={verb === 'PATCH'} onChange={onChange} />PATCH
     </label>
-    <label>
+    <label htmlFor="DELETE">
       <input type="radio" name="verb" id="DELETE" value="DELETE" checked={verb === 'DELETE'} onChange={onChange} />DELETE
     </label>
 
@@ -28,8 +28,8 @@ const Form = ({ url, verb, requestBody, username, password, token, onSubmit, onC
     <input type="text" name="password" placeholder="Password" defaultValue={password} onChange={onChange} />
     <input type="text" name="token" placeholder="Bearer Token" defaultValue={token} onChange={onChange} />
 
-    <button>Go!</button>
-    <button type="reset" value="Clear Entries" onClick={onClick}>Clear Entries</button>
+    <button id="goButton">Go!</button>
+    <button type="reset" id="resetButton" value="Clear Entries" onClick={onClick}>Clear Entries</button>
   </form>
 );
 
