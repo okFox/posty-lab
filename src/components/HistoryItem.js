@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './App';
 
 const HistoryItem = ({ historyItem, onClick }) => (
-  <div onClick={() => onClick(historyItem)}>
-    <span>{historyItem.verb}</span>
-    <span>{historyItem.url}</span>
+  <div onClick={() => onClick(historyItem)} className={styles.historyItem}>
+    <span className={styles.verb}>{historyItem.verb} -- </span>
+    <span className={styles.url}>{historyItem.url}</span>
   </div>
 );
 

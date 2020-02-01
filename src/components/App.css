@@ -1,5 +1,4 @@
 html {
-
     background-color: black;
     }
    
@@ -32,8 +31,20 @@ main {
     section {
         grid-area: hist;
         height: 80vh;
-        background-color: blue; 
+        background-color: blue;
+        
+        }
+        li {
+            cursor: pointer;
+            list-style-type:none;
+            padding: 5px;
+            font-family: sans-serif;
+            color: cornsilk;
+            width: 50%;
+            border-radius: 3px;;
+            background-color: black;
     }
+
     article {
         grid-area: resp;
         background-color: lightgray;
@@ -60,7 +71,7 @@ main {
         }
         input[name=requestBody] {
             grid-area: json;
-            background-color: lightgray;
+            background-color: white;
         }
         input[name=username] {
             grid-area: user;
@@ -91,12 +102,12 @@ main {
             grid-area: del;
         }
 
-    label {
-        color: cornsilk;
-        cursor: pointer;
-    }
-    }
+        label {
+            color: cornsilk;
+            cursor: pointer;
+        }
 
+    }
 }
 h1 {
     font-family: 'Audiowide', cursive;
@@ -107,7 +118,7 @@ h1 {
 h2 {
     font-family: 'Audiowide', cursive;
     color: black;
-    font-size: 24px;
+    font-size: 36px;
     margin-left: 20px;
 }
 
@@ -122,7 +133,10 @@ button[id=resetButton] {
     background-color: black;
     color: cornsilk;
     font-size: 24px;
-
 }
+
+
+
+
 
 
