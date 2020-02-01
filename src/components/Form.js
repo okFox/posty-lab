@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Form.css';
+// import styles from './Form.css';
+import styles from './App.css';
 
 const Form = ({ url, verb, requestBody, username, password, token, onSubmit, onChange, onClick }) => (
-  <form onSubmit={onSubmit} className={styles.Form}>
+  <form onSubmit={onSubmit} className={styles.Form} id={styles.formSection}>
     <input type="text" name="url" placeholder="Enter URL" defaultValue={url} onChange={onChange} />
 
     <label>

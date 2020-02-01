@@ -1,8 +1,14 @@
   
 import React from 'react';
+import styles from '../components/App';
 
 const Footer = () => (
-  <p>Posty hates tomatoes</p>
+  <>
+    <div className={styles.footer}>
+      <p>Posty hates tomatoes</p>
+    </div>
+  </>
+
 );
 
 export default Footer;

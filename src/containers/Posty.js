@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
 import History from '../components/History';
 import Form from '../components/Form';
 import Response from '../components/Response';
-import Footer from '../components/Footer';
+
 import { fetchWithError } from '../services/api';
 
-export default class Postperson extends React.Component {
+export default class Posty extends React.Component {
   state = {
     url: '',
     verb: '',
@@ -84,7 +83,6 @@ export default class Postperson extends React.Component {
     const { url, verb, requestBody, username, password, token, responseBody, historyItems } = this.state;
     return (
       <>
-        <Header />
         <History historyItems={historyItems} onClick={this.repopulateForm}/>
         <Form
           url={url}
@@ -97,7 +95,6 @@ export default class Postperson extends React.Component {
           onSubmit={this.handleSubmit}
           onClick={this.resetForm} />
         <Response responseBody={responseBody}/>
-        <Footer />
       </>
     );
   }
