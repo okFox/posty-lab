@@ -2,40 +2,36 @@
     background-color: black;
     color: cornsilk;
 }
+
 main {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 60% 10% 10%;
+    width: 90%;
+    height: 100%;
+    grid-template-areas: "head head"
+                         "hist form"
+                         "foot foot"
+                         "resp resp";
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    .header {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
-        grid-row-end: 1;
+    header {
+        grid-area: head;
+        background-color: crimson;
     }
-    h1 {
-        color: cornsilk;
+    footer {
+        grid-area: foot;
+        background-color: indigo;
     }
-    .footer {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 3;
-        grid-row-end: 4;
+    form[id=historySection] {
+        grid-area: form;
+        background-color: green; 
     }
-
-    .historySection {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 2;
-        grid-row-end: 3;
+    section[id=historySection] {
+        grid-area: hist;
     }
-    form {
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;   
+    section[class=response] {
+        grid-area: resp;
     }
-
 
 
 }

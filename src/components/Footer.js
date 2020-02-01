@@ -1,12 +1,12 @@
   
 import React from 'react';
-import styles from '../components/App';
+import styles from './App';
 
 const Footer = () => (
   <>
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <p>Posty hates tomatoes</p>
-    </div>
+    </footer>
   </>
 
 );
