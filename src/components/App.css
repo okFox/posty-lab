@@ -15,7 +15,7 @@ main {
                          "foot foot";
     grid-template-rows: 100px 500px 1fr 50px;
     grid-template-columns: 35% 65%;
-
+    grid-gap: 10px;
 
     header {
         grid-area: head;
@@ -31,17 +31,62 @@ main {
     section {
         grid-area: hist;
         height: 80vh;
-        background-color: green; 
+        background-color: white; 
     }
     article {
         grid-area: resp;
         background-color: blue;
     }
     form {
-        grid-area: form;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(184, 117, 152);
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-areas: "url url"
+                             "get user"
+                             "post pass"
+                             "put token"
+                             "patch json"
+                             "del json";
+        grid-template-rows: auto;
+        grid-template-columns: 30% 70%;
+        grid-gap: 5px;
+        background-color: black;
+
+        input[name=url] {
+            grid-area: url;
+            color: firebrick;
+        }
+        input[name=requestBody] {
+            grid-area: json;
+            background-color: lightgray;
+        }
+        input[name=username] {
+            grid-area: user;
+            background-color: gold;
+        }
+        input[name=password] {
+            grid-area: pass;
+            background-color: gold;
+        }
+        input[name=token] {
+            grid-area: token;
+            background-color: lightgray;
+        }
+        input[id=GET] {
+            grid-area: get;
+        }
+        input[id=POST] {
+            grid-area: post;
+        }
+        input[id=PUT] {
+            grid-area: put;
+        }
+        input[id=PATCH] {
+            grid-area: patch;
+        }
+        input[id=DELETE] {
+            grid-area: del;
+        }
     }
 
 }
