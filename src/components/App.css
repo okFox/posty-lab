@@ -1,35 +1,38 @@
 * {
-    background-color: black;
     color: cornsilk;
-}
+    background-color: black;
+    }
+   
 
 main {
+
     display: grid;
-    width: 90%;
+    width: 100%;
     height: 100%;
     grid-template-areas: "head head"
                          "hist form"
-                         "resp resp"
+                         "hist resp"
                          "foot foot";
-    grid-template-rows: 100px 1fr 1fr 50px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 200px 1fr 50px;
+    grid-template-columns: 35% 65%;
+
 
     header {
         grid-area: head;
         background-color: crimson;
+
     }
     footer {
         grid-area: foot;
         background-color: indigo;
     }
-    form[id=historySection] {
-        grid-area: form;
+
+    section {
+        grid-area: hist;
+        height: 80vh;
         background-color: green; 
     }
-    section[id=historySection] {
-        grid-area: hist;
-    }
-    section[class=response] {
+    article {
         grid-area: resp;
         background-color: blue;
     }

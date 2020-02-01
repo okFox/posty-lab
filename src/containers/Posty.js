@@ -1,6 +1,7 @@
 import React from 'react';
 import History from '../components/History';
 import Form from '../components/Form';
+import Response from '../components/Response';
 
 import { fetchWithError } from '../services/api';
 
@@ -79,7 +80,7 @@ export default class Posty extends React.Component {
   }
 
   render() {
-    const { url, verb, requestBody, username, password, token, historyItems } = this.state;
+    const { url, verb, requestBody, username, password, token, responseBody, historyItems } = this.state;
     return (
       <>
         <History historyItems={historyItems} onClick={this.repopulateForm}/>
@@ -93,6 +94,7 @@ export default class Posty extends React.Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
           onClick={this.resetForm} /> 
+        <Response responseBody={responseBody} />
       </>
     );
   }
