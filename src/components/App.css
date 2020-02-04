@@ -1,0 +1,151 @@
+html {
+    background-color: black;
+    }
+   
+
+main {
+    font-family: sans-serif;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "head head"
+                         "resp form"
+                         "resp hist"
+                         "foot foot";
+    grid-template-rows: 100px 500px 1fr 50px;
+    grid-template-columns: 35% 65%;
+    grid-gap: 10px;
+
+    header {
+        grid-area: head;
+        background-color: crimson;
+        font-family: 'Changa', sans-serif;
+
+    }
+    footer {
+        grid-area: foot;
+        background-color: crimson;
+        font-style: italic;
+    }
+
+    section {
+        grid-area: hist;
+        height: 80vh;
+        background-color: blue;
+        
+        }
+        li {
+            cursor: pointer;
+            list-style-type:none;
+            padding: 5px;
+            font-family: sans-serif;
+            color: cornsilk;
+            width: 50%;
+            border-radius: 3px;;
+            background-color: black;
+    }
+
+    article {
+        grid-area: resp;
+        background-color: lightgray;
+    }
+    form {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        font-family: 'Audiowide', cursive;
+        font-size: 26px;
+        grid-template-areas: "url url"
+                             "get user"
+                             "post pass"
+                             "put token"
+                             "patch json"
+                             "del json";
+        grid-template-rows: auto;
+        grid-template-columns: 30% 70%;
+        grid-gap: 5px;
+        background-color: black;
+
+        input[name=url] {
+            grid-area: url;
+        }
+        input[name=requestBody] {
+            grid-area: json;
+            background-color: white;
+        }
+        input[name=username] {
+            grid-area: user;
+            background-color: gold;
+        }
+        input[name=password] {
+            grid-area: pass;
+            background-color: gold;
+        }
+        input[name=token] {
+            grid-area: token;
+            background-color: gold;
+        }
+
+        input[id=GET] {
+            grid-area: get;
+        }
+        input[id=POST] {
+            grid-area: post;
+        }
+        input[id=PUT] {
+            grid-area: put;
+        }
+        input[id=PATCH] {
+            grid-area: patch;
+        }
+        input[id=DELETE] {
+            grid-area: del;
+        }
+
+        label {
+            color: cornsilk;
+            cursor: pointer;
+            
+        }
+        input[type="radio"]:checked+label {
+            color: gold;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+    }
+}
+h1 {
+    font-family: 'Audiowide', cursive;
+    color: black;
+    font-size: 48px;
+    margin-left: 100px;
+}
+h2 {
+    font-family: 'Audiowide', cursive;
+    color: black;
+    font-size: 36px;
+    margin-left: 20px;
+}
+
+button[id=goButton] {
+    font-family: 'Audiowide', cursive;
+    background-color: crimson;
+    color: cornsilk;
+    font-size: 24px;
+}
+button[id=resetButton] {
+    font-family: 'Audiowide', cursive;
+    background-color: black;
+    color: cornsilk;
+    font-size: 24px;
+}
+
+
+
+
+
+
