@@ -105,6 +105,15 @@ main {
         label {
             color: cornsilk;
             cursor: pointer;
+            
+        }
+        input[type="radio"]:checked+label {
+            color: gold;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            display: none;
         }
 
     }

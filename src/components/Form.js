@@ -7,21 +7,20 @@ const Form = ({ url, verb, requestBody, username, password, token, onSubmit, onC
   <form onSubmit={onSubmit} className={styles.form} id={styles.formSection}>
     <input type="text" name="url" placeholder="Enter URL" defaultValue={url} onChange={onChange} />
 
-    <label htmlFor="GET">
-      <input type="radio" name="verb" id="GET" value="GET" checked={verb === 'GET'} onChange={onChange} />GET
-    </label>
-    <label htmlFor="POST">
-      <input type="radio" name="verb" id="POST" value="POST" checked={verb === 'POST'} onChange={onChange} />POST
-    </label>
-    <label htmlFor="PUT">
-      <input type="radio" name="verb" id="PUT" value="PUT" checked={verb === 'PUT'} onChange={onChange} />PUT
-    </label>
-    <label htmlFor="PATCH">
-      <input type="radio" name="verb" id="PATCH" value="PATCH" checked={verb === 'PATCH'} onChange={onChange} />PATCH
-    </label>
-    <label htmlFor="DELETE">
-      <input type="radio" name="verb" id="DELETE" value="DELETE" checked={verb === 'DELETE'} onChange={onChange} />DELETE
-    </label>
+    <input type="radio" name="verb" id="GET" value="GET" checked={verb === 'GET'} onChange={onChange} />
+    <label htmlFor="GET">GET</label>
+
+    <input type="radio" name="verb" id="POST" value="POST" checked={verb === 'POST'} onChange={onChange} />
+    <label htmlFor="POST">POST</label>
+
+    <input type="radio" name="verb" id="PUT" value="PUT" checked={verb === 'PUT'} onChange={onChange} />
+    <label htmlFor="PUT">PUT</label>
+
+    <input type="radio" name="verb" id="PATCH" value="PATCH" checked={verb === 'PATCH'} onChange={onChange} />
+    <label htmlFor="PATCH">PATCH</label>
+
+    <input type="radio" name="verb" id="DELETE" value="DELETE" checked={verb === 'DELETE'} onChange={onChange} />
+    <label htmlFor="DELETE">DELETE</label>
 
     <input type="textarea" name="requestBody" placeholder='Raw Body' defaultValue={requestBody} onChange={onChange} />
     <input type="text" name="username" placeholder="Username" defaultValue={username} onChange={onChange} />
